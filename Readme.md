@@ -2,6 +2,7 @@
 
 ![expoded_view.png](./images/expoded_view.png)
 
+The main change from previous version is change into double helix.
 Max 1 min for traversing 180o for azimuthal so around 6o/sec
 
 ## Parts
@@ -24,10 +25,10 @@ Max 1 min for traversing 180o for azimuthal so around 6o/sec
 - 12x M3 heat insert
 
 # Tolerance
-Print the part tolerance_test_print to test the tolerance of your 3D printer for the interal (VarSet.Base_bearing_inside_diameter_with_tolerance) and external (VarSet.Base_bearing_outside_diameter_with_tolerance) diameter of bearing. 
-- Change the VarSet.Base_tolerance_outside_circle if the internal base for the bearing is need adjasment (VarSet.Base_bearing_inside_diameter_with_tolerance). 
+Print the part tolerance_test_print to test the tolerance of your 3D printer for the integral (VarSet.Base_bearing_inside_diameter_with_tolerance) and external (VarSet.Base_bearing_outside_diameter_with_tolerance) diameter of bearing. 
+- Change the VarSet.Base_tolerance_outside_circle if the internal base for the bearing is need adjacent (VarSet.Base_bearing_inside_diameter_with_tolerance). 
 ![internal_base](./images/test_inside_diameter.png)
-- Change the VarSet.Base_tolerance_inside_circle if the exteral base of the bearing need adgasment (VarSet.Base_bearing_outside_diameter_with_tolerance).
+- Change the VarSet.Base_tolerance_inside_circle if the external base of the bearing need adjacent (VarSet.Base_bearing_outside_diameter_with_tolerance).
 ![outside_base](./images/test_outside_diameter.png)
 
 
