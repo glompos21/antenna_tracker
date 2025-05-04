@@ -34,21 +34,48 @@ Print the part tolerance_test_print to test the tolerance of your 3D printer for
 
 # Software
 
-Controling android: https://github.com/rt-bishop/Look4Sat/
- 
+Controlling on android: https://github.com/rt-bishop/Look4Sat/
+
+## On Linux
+Install:
+- gpredict
+- HAMLIB https://github.com/Hamlib/Hamlib/wiki/Download#latest-release
+Plug the rotator into to a USB port and start the HAMLIB rotator control daemon in a terminal window:
+- rotctld -m 202 -r /dev/ttyACM0 -s 9600 -C timeout=500 -vvv
+- Where: 202 is the model number for a rotator emulating AMSAT Easycomm II protocol 
+
+
+## Testing
+2 different type of commands
+- Easycomm II rotator. Need to be ternamanted with a New Line code.
+    - Querey commands send: "AZ EL"
+    - Send command: "AZnn.n ELnn.n"
+- User commands. NEED to be terminated with Carriege Return (CR)
+	- to set to az=100.1 and el=45.4, put on 100.1 45.5<CR>
+
+# L298N Motor Driver Logic Table (1 Motor)
+
+| IN1 | IN2 | Motor State      |
+|-----|-----|------------------|
+|  1  |  0  | Forward          |
+|  0  |  1  | Backward         |
+|  1  |  1  | Brake (Short)    |
+|  0  |  0  | Stop (Free Run)  |
+
 ## Firmware
 Based on https://github.com/F4HTB/esp32Rotor
 Calibrate the LSM303DLHC sensor: 
 - https://www.sarcnet.org/mini-satellite-antenna-rotator-mk1.html -> Calibration Instructions
 - https://www.youtube.com/watch?v=oJnpO5Nj7Gc
 
-For Chania e4.87
 
-# Caribration Jig
+# Calibration Jig
 
 A calibration jig for the LSM303DLHC. 
+See [calibration.md](./firmware/calibration.md) for more info.
+You can use a 3d printed [calibration_jig](https://github.com/glompos21/calibration_jig)
 
-![calibration_jig.FCStd](./caribration_jig/calibration_jig.FCStd)
+
 
 
 
